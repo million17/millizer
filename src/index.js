@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
 import reducers from './reducers/index';
 import { Provider } from 'react-redux';
+import 'font-awesome/css/font-awesome.min.css';
 
 const store = createStore(
   reducers

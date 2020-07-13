@@ -11,3 +11,7 @@ APP ->
         CartItem 6 
         CartResult 7 
     Footer 8
+
+
+
+    npm i --save @fontawesome/fontawesome-svg-core @fontawesome/free-solid-svg-icons @fontawesome/react-fontawesome

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "../src/assets/FontAwesomeIcons";
 import './App.css';
 import { Container} from 'react-bootstrap';
 import Header from './components/Header';
