@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 import { 
-    Container, 
-    Row, 
-    Col, 
     Navbar, 
     Button, 
     Form, 
     Nav, 
     FormControl, 
-    Badge, 
-    Card } from 'react-bootstrap';
+} from 'react-bootstrap';
 
 class Header extends Component {
     render() {

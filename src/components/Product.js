@@ -1,15 +1,8 @@
 import React, { Component } from 'react'
 import logo from '../../src/logo.svg';
 import {
-    Container,
-    Row,
     Col,
-    Navbar,
     Button,
-    Form,
-    Nav,
-    FormControl,
-    Badge,
     Card
 } from 'react-bootstrap';
 class Product extends Component {

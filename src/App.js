@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import { Container, Row, Col, Navbar, Button, Form, Nav, FormControl, Badge, Card } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import Header from './components/Header';
 import Products from './components/Products';
 import Message from './components/Message';

@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
 
 import {
-    Container,
     Row,
-    Col,
-    Navbar,
-    Button,
-    Form,
-    Nav,
-    FormControl,
     Badge,
-    Card
 } from 'react-bootstrap';
 import Product from './Product';
 class Products extends Component {
