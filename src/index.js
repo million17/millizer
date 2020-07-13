@@ -10,7 +10,8 @@ import { Provider } from 'react-redux';
 import 'font-awesome/css/font-awesome.min.css';
 
 const store = createStore(
-  reducers
+  reducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 ReactDOM.render(

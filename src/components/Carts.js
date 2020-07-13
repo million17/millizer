@@ -3,23 +3,23 @@ import {
     Table,
 
 } from 'react-bootstrap';
-import Cart from './Cart';
-import CartResult from './CartResult';
 class Carts extends Component {
     render() {
+        var { children } = this.props;
         return (
             <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Sub Total</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <Cart />
-                    <CartResult />
+                    {children}
                 </tbody>
             </Table>
         )
