@@ -5,6 +5,7 @@ import Carts from './../components/Carts';
 import Cart from './../components/Cart';
 import * as constants from './../constants/constant';
 import CartResult from './../components/CartResult';
+import { actRemoveProductInCart } from './../actions/index'
 class CartContainer extends Component {
     render() {
         var { cart } = this.props;
@@ -17,9 +18,10 @@ class CartContainer extends Component {
     }
 
     showCartItem = (cart) => {
+        var { onDeleteProductInCart } = this.props;
         var result = <tr>
-                        <td>{constants.CART_EMPTY}</td>
-                    </tr>;
+            <td>{constants.CART_EMPTY}</td>
+        </tr>;
         if (cart.length > 0) {
             result = cart.map((item, index) => {
                 return (
@@ -27,6 +29,7 @@ class CartContainer extends Component {
                         key={index}
                         item={item}
                         index={index}
+                        onDeleteProductInCart={onDeleteProductInCart}
                     />
                 );
             });
@@ -70,7 +73,15 @@ const mapStateToProps = state => {
     }
 }
 
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onDeleteProductInCart: (product) => {
+            dispatch(actRemoveProductInCart(product))
+        }
+    }
+}
 
-export default connect(mapStateToProps, null)(CartContainer);
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartContainer);
 
 //nv kết nối lên props

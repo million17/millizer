@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import {
+    Button
+} from 'react-bootstrap';
 
 class Cart extends Component {
     render() {
@@ -16,9 +19,22 @@ class Cart extends Component {
                     {item.quantity}
                 </td>
                 <td>{this.showSubtotal(item.product.price, item.quantity)} $</td>
+                <td>
+                    <Button
+                        variant="outline-warning"
+                        onClick={() => { this.onDelete(item.product) }}
+                    >Delete
+                    </Button>
+                </td>
             </tr>
         )
     }
+
+    onDelete = (product) => {
+        var { onDeleteProductInCart } = this.props;
+        onDeleteProductInCart(product);
+    }
+
     showSubtotal = (price, quantity) => {
         return price * quantity;
     }

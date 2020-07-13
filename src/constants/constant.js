@@ -6,5 +6,5 @@ export const WELCOME = 'Welcom to Shop'
 
 //Action Cart
 export const ADD_TO_CART = 'ADD_TO_CART';
-// export const CHANGE_MSG = ADD_TO_CART_SUCCESS;
 export const CHANGE_MSG = 'CHANGE_MSG';
+export const DELETE_PRODUCT_IN_CART = 'DELETE_PRODUCT_IN_CART';

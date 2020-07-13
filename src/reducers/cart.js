@@ -9,6 +9,14 @@ const cart = (state = initState, action) => {
     var { product, quantity } = action;
     var index = -1;
     switch (action.type) {
+        case constants.DELETE_PRODUCT_IN_CART:
+            index = findProductInCart(state, product);
+            if (index !== -1) {
+                //Tìm thấy thì cắt phần tử đó ở 1 vị trí
+                state.splice(index, 1);
+            }
+            localStorage.setItem('CART', JSON.stringify(state));
+            return [...state];
         case constants.ADD_TO_CART:
             index = findProductInCart(state, product);
             if (index !== -1) {

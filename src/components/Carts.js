@@ -16,6 +16,7 @@ class Carts extends Component {
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Sub Total</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
