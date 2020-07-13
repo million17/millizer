@@ -7,7 +7,7 @@ import * as constants from './../constants/constant'
 class Cart extends Component {
     render() {
         var { item } = this.props;
-        var { quantity } =  item;
+        var { quantity } = item;
         return (
             <tr>
                 <td>{item.product.id}</td>
@@ -20,11 +20,11 @@ class Cart extends Component {
                 <td>
                     {quantity}
                     <label
-                        className="btn btn-primary"
+                        className="btn btn-primary mx-2"
                         onClick={() => this.onUpdateQuantity(item.product, item.quantity - 1)}>-</label>
 
                     <label
-                        className="btn btn-primary"
+                        className="btn btn-primary mx-2"
                         onClick={() => this.onUpdateQuantity(item.product, item.quantity + 1)}>+</label>
                 </td>
                 <td>{this.showSubtotal(item.product.price, item.quantity)} $</td>
@@ -41,7 +41,7 @@ class Cart extends Component {
 
     onUpdateQuantity = (product, quantity) => {
         if (quantity > 0) {
-            var {onUpdateProductInCart, onChangeMessage} = this.props;
+            var { onUpdateProductInCart, onChangeMessage } = this.props;
             onUpdateProductInCart(product, quantity);
             onChangeMessage(constants.UPDATE_CART_SUCCESS);
         }
