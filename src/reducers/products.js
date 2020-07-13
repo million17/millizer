@@ -1,5 +1,6 @@
 import ip from '../assets/images/iphone-11.png';
 import ap from '../assets/images/apple-watch.jpg';
+import ss from '../assets/images/samsung.png';
 var initState = [
     {
         id: 1,
@@ -18,6 +19,15 @@ var initState = [
         price: 400,
         inventory: 10,
         rating: 1 
+    },
+    {
+        id: 3,
+        name: 'Samsung Galaxy Fold',
+        image: ss,
+        description: 'Made in China',
+        price: 1500,
+        inventory: 23,
+        rating: 5 
     },
 ];
 

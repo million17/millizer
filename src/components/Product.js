@@ -8,9 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class Product extends Component {
     render() {
         var { product } = this.props;
+
         return (
             <Col>
-                <Card style={{ width: '18rem' }}>
+                <Card>
                     <Card.Img variant="top" src={product.image} alt={product.name} />
                     <Card.Body>
                         <Card.Title>{product.name}</Card.Title>
@@ -23,19 +24,25 @@ class Product extends Component {
                         <Card.Text>
                             {product.price} $
                         </Card.Text>
-                        <Button variant="primary">Add to Cart</Button>
+                        <Button
+                            variant="primary"
+                            onClick={() => this.onAddToCart(product)}>Add to Cart</Button>
                     </Card.Body>
                 </Card>
             </Col>
         );
     }
+
+    onAddToCart = (product) => {
+        this.props.onAddToCart(product);
+    }
     showRatings(rating) {
         var result = [];
-        for(var i = 1; i<= rating ; i++) {
-            result.push(<FontAwesomeIcon icon="star" key={i}/>)
+        for (var i = 1; i <= rating; i++) {
+            result.push(<FontAwesomeIcon icon="star" key={i} />)
         }
-        for(var j = 1 ; j<= (5-rating); j++) {
-            result.push(<FontAwesomeIcon icon="star-half-alt" key={j + 69}/>)
+        for (var j = 1; j <= (5 - rating); j++) {
+            result.push(<FontAwesomeIcon icon="star-half-alt" key={j + 69} />)
         }
         return result;
     }
