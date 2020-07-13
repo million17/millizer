@@ -5,7 +5,7 @@ import Carts from './../components/Carts';
 import Cart from './../components/Cart';
 import * as constants from './../constants/constant';
 import CartResult from './../components/CartResult';
-import { actRemoveProductInCart } from './../actions/index'
+import { actRemoveProductInCart, actChangeMessage, actUpdateProductInCart } from './../actions/index'
 class CartContainer extends Component {
     render() {
         var { cart } = this.props;
@@ -18,7 +18,7 @@ class CartContainer extends Component {
     }
 
     showCartItem = (cart) => {
-        var { onDeleteProductInCart } = this.props;
+        var { onDeleteProductInCart, onChangeMessage, onUpdateProductInCart } = this.props;
         var result = <tr>
             <td>{constants.CART_EMPTY}</td>
         </tr>;
@@ -30,6 +30,8 @@ class CartContainer extends Component {
                         item={item}
                         index={index}
                         onDeleteProductInCart={onDeleteProductInCart}
+                        onChangeMessage={onChangeMessage}
+                        onUpdateProductInCart={onUpdateProductInCart}
                     />
                 );
             });
@@ -64,7 +66,10 @@ CartContainer.propTypes = {
             rating: PropTypes.number.isRequired,
         }).isRequired,
         quantity: PropTypes.number.isRequired
-    })).isRequired
+    })).isRequired,
+    onDeleteProductInCart: PropTypes.func.isRequired,
+    onChangeMessage: PropTypes.func.isRequired,
+    onUpdateProductInCart: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => {
@@ -77,6 +82,12 @@ const mapDispatchToProps = (dispatch, props) => {
     return {
         onDeleteProductInCart: (product) => {
             dispatch(actRemoveProductInCart(product))
+        },
+        onChangeMessage: (message) => {
+            dispatch(actChangeMessage(message))
+        },
+        onUpdateProductInCart: (product, quantity) => {
+            dispatch(actUpdateProductInCart(product, quantity))
         }
     }
 }
