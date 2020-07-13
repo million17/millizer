@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import logo from '../../src/logo.svg';
 import {
     Col,
     Button,
@@ -33,10 +32,10 @@ class Product extends Component {
     showRatings(rating) {
         var result = [];
         for(var i = 1; i<= rating ; i++) {
-            result.push(<FontAwesomeIcon icon="star" />)
+            result.push(<FontAwesomeIcon icon="star" key={i}/>)
         }
         for(var j = 1 ; j<= (5-rating); j++) {
-            result.push(<FontAwesomeIcon icon="star-half-alt" />)
+            result.push(<FontAwesomeIcon icon="star-half-alt" key={j + 69}/>)
         }
         return result;
     }
