@@ -5,6 +5,7 @@ import {
     Card
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as constants from './../constants/constant'
 class Product extends Component {
     render() {
         var { product } = this.props;
@@ -35,6 +36,7 @@ class Product extends Component {
 
     onAddToCart = (product) => {
         this.props.onAddToCart(product);
+        this.props.onChangeMessage(constants.ADD_TO_CART_SUCCESS);
     }
     showRatings(rating) {
         var result = [];

@@ -1,6 +1,4 @@
 import * as constants from './../constants/constant'
-import ip from '../assets/images/iphone-11.png';
-import ap from '../assets/images/apple-watch.jpg';
 var data = JSON.parse(localStorage.getItem('CART'));
 
 

@@ -17,7 +17,9 @@ class CartContainer extends Component {
     }
 
     showCartItem = (cart) => {
-        var result = constants.CART_EMPTY;
+        var result = <tr>
+                        <td>{constants.CART_EMPTY}</td>
+                    </tr>;
         if (cart.length > 0) {
             result = cart.map((item, index) => {
                 return (
@@ -35,8 +37,8 @@ class CartContainer extends Component {
 
     showTotalAmount = (cart) => {
         var result = null;
-        if(cart.length > 0 ) {
-            result = <CartResult cart={cart}/>
+        if (cart.length > 0) {
+            result = <CartResult cart={cart} />
         }
         return result;
     }

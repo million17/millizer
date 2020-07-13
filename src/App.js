@@ -4,14 +4,14 @@ import './App.css';
 import { Container} from 'react-bootstrap';
 import Header from './components/Header';
 import ProductsContainer from './containers/ProductsContainer';
-import Message from './components/Message';
 import CartContainer from './containers/CartContainer';
+import MessageContainer from './containers/MessageContainer';
 function App() {
   return (
     <Container>
       <Header />
       <ProductsContainer />
-      <Message />
+      <MessageContainer />
       <CartContainer />
 
     </Container>

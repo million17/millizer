@@ -8,3 +8,10 @@ export const actAddToCart = (product, quantity) => {
         quantity
     }
 }
+
+export const actChangeMessage = (message) => {
+    return {
+        type: constants.CHANGE_MSG,
+        message
+    }
+}

@@ -5,13 +5,14 @@ import {
 class Message extends Component {
 
     render() {
+        var { message } = this.props;
         const messages = [
             'success'];
         return (
             <>
                 {messages.map((variant, idx) => (
                     <Alert key={idx} variant={variant}>
-                        This is a {variant} alert—check it out!
+                        {message}
                     </Alert>
                 ))}
             </>
